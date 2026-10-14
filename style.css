@@ -1,0 +1,481 @@
+/* --- Reset y Estilos Globales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0b090c;
+    color: #e2dfdb;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+}
+
+/* --- Botón Flotante de WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+}
+
+/* --- Header / Navegación --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(11, 9, 12, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 900;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #b89753;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: #b3ada5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #b89753;
+}
+
+/* --- Sección Hero Impactante --- */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #130f18 0%, #070508 100%);
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(184, 151, 83, 0.08) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(184, 151, 83, 0.1);
+    border: 1px solid rgba(184, 151, 83, 0.3);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: #b89753;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #a8a29e;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #b89753;
+    color: #0b090c;
+    box-shadow: 0 4px 15px rgba(184, 151, 83, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #d4ae62;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(184, 151, 83, 0.5);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #e2dfdb;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    border-color: #b89753;
+    color: #b89753;
+    transform: translateY(-3px);
+}
+
+/* Orbes flotantes de fondo animadas */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    opacity: 0.4;
+    animation: floatOrb 10s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+    width: 350px;
+    height: 350px;
+    background: #4a2c5e;
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: #1c354d;
+    bottom: -150px;
+    right: -100px;
+    animation-delay: -5s;
+}
+
+/* --- Sección Galería --- */
+.gallery-section {
+    padding: 120px 8%;
+    background-color: #0e0b10;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.section-title p {
+    color: #8c857f;
+    font-size: 1.05rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.art-card {
+    background: #151118;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.art-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(184, 151, 83, 0.1);
+    border-color: rgba(184, 151, 83, 0.3);
+}
+
+.art-image-container {
+    height: 380px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+.art-card:hover .art-image-container {
+    transform: scale(1.03);
+}
+
+/* Fondos artísticos simulados mediante gradientes abstractos surrealistas (puedes cambiarlos por tus propias URLs de imágenes) */
+.img-1 {
+    background: linear-gradient(135deg, #2b1035 0%, #101935 50%, #080709 100%), 
+                radial-gradient(circle at 30% 40%, #b89753 0%, transparent 60%);
+}
+
+.img-2 {
+    background: linear-gradient(220deg, #1b0c24 0%, #3a1525 50%, #0c090e 100%), 
+                radial-gradient(circle at 70% 60%, #5375b8 0%, transparent 70%);
+}
+
+.img-3 {
+    background: linear-gradient(45deg, #0d1b1e 0%, #291530 60%, #090709 100%), 
+                radial-gradient(circle at 50% 30%, #b86253 0%, transparent 65%);
+}
+
+.art-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 9, 12, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.art-card:hover .art-overlay {
+    opacity: 1;
+}
+
+.art-tech {
+    font-size: 0.9rem;
+    color: #b89753;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.btn-card {
+    padding: 10px 24px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+    background: #fff;
+    color: #000;
+}
+
+.art-info {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.art-info h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.price {
+    font-size: 0.9rem;
+    color: #b89753;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Sección Filosofía --- */
+.philosophy-section {
+    padding: 100px 10%;
+    background: linear-gradient(to bottom, #0b090c, #130f16);
+    text-align: center;
+}
+
+.philosophy-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.philosophy-container h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.philosophy-container p {
+    font-size: 1.15rem;
+    color: #a8a29e;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* --- Sección Contacto --- */
+.contact-section {
+    padding: 100px 8%;
+    background-color: #130f16;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-box {
+    background: linear-gradient(135deg, #1b1422 0%, #100b14 100%);
+    border: 1px solid rgba(184, 151, 83, 0.2);
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.contact-box h2 {
+    font-size: 2.3rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contact-box p {
+    color: #a8a29e;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.btn-whatsapp-big {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #25d366;
+    color: #fff;
+    padding: 16px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp-big svg {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-whatsapp-big:hover {
+    background-color: #20ba59;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* --- Footer --- */
+footer {
+    padding: 30px;
+    text-align: center;
+    background-color: #070508;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    color: #6b645f;
+    font-size: 0.85rem;
+}
+
+/* --- Animaciones CSS Clave --- */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    100% {
+        transform: translate(30px, 50px) scale(1.1);
+    }
+}
+
+/* --- Adaptabilidad en Móviles --- */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    .nav {
+        display: none; /* Simplificado para móviles en puro CSS */
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .gallery-section, .contact-section {
+        padding: 80px 5%;
+    }
+}
